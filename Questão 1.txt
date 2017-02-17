@@ -1,0 +1,5 @@
+Um processador uniciclo executa cada instrução em um único ciclo de clock, mas nem todos os componentes são usados em todas as instruções e isso faz com que os componentes que não sendo usados fiquem ociosos.
+Em um processador multiciclo cada componente é executado em um ciclo de clock, ou seja, uma istrução que use n componentes gastará n ciclos de clock.
+Apenas com essa mudança já é possível obter uma melhoria de desempenho, uma vez que cada ciclo que clock poderá ter duração menor, em outras palavras, o processador ficará mais rápido.
+
+Outra vantagem que o multiciclo tem é estar apto para usar uma técnica chamada pipelining. Onde as instruções podem ser executadas em paralelo, enquanto o componente X executa uma pparte da intrução, o componente Y executa outra parte de outra instrução.
