@@ -1,0 +1,3 @@
+Com as memorias segmentadas e a utilização do bypassing, não irá ocorrer mais conflitos, portanto não haverá stalls. 
+	O tempo para execução de uma iteração do loop cai para 18ns
+Logo o speedup é 38/18 = 2,1 vezes mais rápido

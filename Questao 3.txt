@@ -1,0 +1,10 @@
+Loop: 	1 - subi 	$t2, $t2, 4
+2 - lw 	$t1, 0($t2)   - Stall, t2 necessita que o valor seja calculado no subi da linha 1. 
+3 - add 	$t3, $t1, $t4 – Stall, aguardando o valor ser carregado em t1 pelo lw da linha 2.
+4 - add 	$t4, $t3, $t3 – Stall, valor de t3 ainda esta sendo calculado no add da linha 3.
+5 - sw 	$t4, 0($t2) – Stall, aguardando  o valor de t4 ser calculado no add da linha 4.
+6 - beq 	$t2, $0, loop – Stall, necessário que o valor seja carregado para t2 no sw da linha 5
+
+Tempo sem pipeline é de 38ns
+Tempo com pipeline é de 33ns
+Logo o speedup é 38/33 = 1,15 vezes mais rápido

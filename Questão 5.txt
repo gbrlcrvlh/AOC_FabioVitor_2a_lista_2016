@@ -1,0 +1,14 @@
+1 - div.d      F1, F2, F3
+2 - sub.d     F4, F5, F1
+3 - s.d 	       F4, 4(F10)
+4 - add.d     F5, F6, F7
+5 - div.d       F4, F5, F6
+
+ Conflito de dados:
+RAW -  sub.d e div.d ; para ser  executado o sub da linha 2 é necessário quer o valor de F1 seja 	calculado o div na linha 1
+WAW - s.d e sub.d ; dependência entre a linha 3 e 2, registrador F5 
+WAR - add.d e sub.b ; F5 é lido no sub na linha 2 e depois é escrito no add da linha 4
+ Na linha 5 existem os conflitos de:
+WAW com a linha 3, F4 é sobrescrito novamente
+RAW com a linha 4, F5 precisa ser calculado em add.d
+RAR com a linha 4, F6 é lido novamente
