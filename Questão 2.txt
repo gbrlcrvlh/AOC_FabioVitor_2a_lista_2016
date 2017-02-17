@@ -1,0 +1,7 @@
+Para implementarmos a técnica pipeline em um multiciclo simples nós precisamos intruduzir os seguintes elementos:
+
+registradores - funcionam como mini buffers que guardam os resultados do processamento de cada componente bem como o estado atual da intrução.
+
+flags - controladores extras para orquestrar os registradores extras e os componentes de modo que funcione o pipelining.
+
+tratamento de erros - evitar conflitos que podem acontecer ao usar o pipeline.
